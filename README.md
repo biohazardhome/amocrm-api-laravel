@@ -16,8 +16,9 @@ AMOCRM_SUBDOMAIN="stalkernikko.amocrm.ru"
 Example Controller
 ```
 ...
-use AmoCRM\Client\AmoCRMApiClient;
+use Biohazard\AmoCRMApi\AmoCRMApiClient;
 use AmoCRM\Models\AccountModel;
+use AmoCRM\Exceptions\AmoCRMApiException;
 ...
 class Account extends Controller
 {
