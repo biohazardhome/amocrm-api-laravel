@@ -4,7 +4,6 @@ namespace Biohazard\AmoCRMApi;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Container\Container;
-use AmoCRM\Client\AmoCRMApiClient;
 
 class AmoCrmApiServiceProvider extends ServiceProvider
 {
@@ -35,7 +34,7 @@ class AmoCrmApiServiceProvider extends ServiceProvider
 
             $apiClient = new AmoCRMApiClient($config['id'], $config['secret'], $config['redirect_uri']);
             $apiClient->setAccountBaseDomain($config['subdomain']);
-            $accessToken = getToken();
+            $accessToken = $apiClient->getTokenFile();
             $apiClient->setAccessToken($accessToken);
             return $apiClient;
         });
