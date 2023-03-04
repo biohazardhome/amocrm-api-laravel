@@ -1,0 +1,26 @@
+{
+    "name": "biohazard/amocrm-api-laravel",
+    "description": "AmoCRM api for Laravel 10",
+    "require": {
+        "amocrm/amocrm-api-library": "0.13.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Biohazard\\AmoCRMApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "biohazardhome",
+            "email": "biohazardhome@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Biohazard\AmoCRMApi\\AmoCrmApiServiceProvider"
+            ]
+        }
+    }
+}
