@@ -17,13 +17,14 @@ Example Controller
 ```
 ...
 use Biohazard\AmoCRMApi\AmoCRMApiClient;
+use League\OAuth2\Client\Token\AccessToken;
 use AmoCRM\Models\AccountModel;
 use AmoCRM\Exceptions\AmoCRMApiException;
 ...
 class Account extends Controller
 {
     
-    public function index(AmoCRMApiClient $amocrm) {
+    public function index(AmoCRMApiClient $amocrm, AccessToken $accessToken) {
         try {
             $account = $amocrm->account()->getCurrent(AccountModel::getAvailableWith());
             dump($account);
