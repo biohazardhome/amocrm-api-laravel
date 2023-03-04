@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Biohazard\AmoCRMApi\\AmoCrmApiServiceProvider"
+                "Biohazard\\AmoCRMApi\\AmoCrmApiServiceProvider"
             ]
         }
     }
