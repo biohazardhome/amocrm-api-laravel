@@ -20,7 +20,7 @@ class AmoCrmApiServiceProvider extends ServiceProvider
 
         $this->publishes([
             $config => config_path('amocrm-api.php'),
-        ], 'config');
+        ], 'amocrm-api');
 
         $this->mergeConfigFrom($config, 'amocrm-api');
     }
