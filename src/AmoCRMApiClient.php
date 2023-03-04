@@ -11,10 +11,6 @@ class AmoCRMApiClient extends BaseAmoCRMApiClient
 
 	public const TOKEN_FILE = 'token_info.json';
 
-	public function getAccessToken() {
-		return $this->accessToken;
-	}
-
 	/**
 	 * @param array $accessToken
 	 */
