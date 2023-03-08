@@ -38,7 +38,7 @@ Middleware add file `app/Http/Kernel.php`
 ```
 protected $middlewareAliases = [
     ...
-    'amocrm-api' => \App\Http\Middleware\AmoCRMApi::class,
+    'amocrm-api' => \Biohazard\AmoCRMApi\Middleware\AmoCRMApi::class,
 ]
 ```
 Route
