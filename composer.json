@@ -1,6 +1,7 @@
 {
     "name": "biohazard/amocrm-api-laravel",
     "description": "AmoCRM api for Laravel 10",
+    "keywords": ["amocrm api laravel", "amocrm laravel", "amocrm api", "amocrm", "crm", "api"],
     "require": {
         "amocrm/amocrm-api-library": "0.13.0"
     },
