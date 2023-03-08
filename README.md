@@ -34,3 +34,16 @@ class Account extends Controller
    }
 }
 ```
+Middleware add file `app/Http/Kernel.php`
+```
+protected $middlewareAliases = [
+    ...
+    'amocrm-api' => \App\Http\Middleware\AmoCRMApi::class,
+]
+```
+Route
+```
+Route::get('/account/', 'App\Http\Controllers\Account@index')
+    ->middleware('amocrm-api')
+    ->name('account');
+```
