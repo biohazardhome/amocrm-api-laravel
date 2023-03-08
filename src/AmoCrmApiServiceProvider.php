@@ -10,13 +10,14 @@ class AmoCrmApiServiceProvider extends ServiceProvider
 {
 
     protected $defer = false;
+    private const CONFIG_PATH = __DIR__.'/../config/amocrm-api.php';
 
     /**
      * Bootstrap any application services.
      */
     public function boot(): void
     {
-        $config = realpath(__DIR__ . '/../config/amocrm-api.php');
+        $config = self::CONFIG_PATH;
 
         $this->publishes([
             $config => config_path('amocrm-api.php'),
@@ -30,7 +31,11 @@ class AmoCrmApiServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $config = app()['config']['amocrm-api'];
+        $config = config('amocrm-api');
+        if (!$config) {
+            $this->mergeConfigFrom(self::CONFIG_PATH, 'amocrm-api');
+            $config = config('amocrm-api');
+        }
 
         $apiClient = new AmoCRMApiClient($config['id'], $config['secret'], $config['redirect_uri']);
         $apiClient->setAccountBaseDomain($config['subdomain']);
