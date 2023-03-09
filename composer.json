@@ -21,7 +21,10 @@
         "laravel": {
             "providers": [
                 "Biohazard\\AmoCRMApi\\AmoCrmApiServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "AmoCRMApi": "Biohazard\\AmoCRMApi\\Facade\\AmoCRMApi"
+            }
         }
     }
 }
