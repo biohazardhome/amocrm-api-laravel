@@ -22,8 +22,6 @@ class AmoCrmApiServiceProvider extends ServiceProvider
         $this->publishes([
             $config => config_path('amocrm-api.php'),
         ], 'amocrm-api');
-
-        $this->mergeConfigFrom($config, 'amocrm-api');
     }
 
     /**
@@ -31,11 +29,8 @@ class AmoCrmApiServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(self::CONFIG_PATH, 'amocrm-api');
         $config = config('amocrm-api');
-        if (!$config) {
-            $this->mergeConfigFrom(self::CONFIG_PATH, 'amocrm-api');
-            $config = config('amocrm-api');
-        }
 
         $apiClient = new AmoCRMApiClient($config['id'], $config['secret'], $config['redirect_uri']);
         $apiClient->setAccountBaseDomain($config['subdomain']);
